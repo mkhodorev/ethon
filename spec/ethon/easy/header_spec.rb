@@ -75,4 +75,19 @@ describe Ethon::Easy::Header do
       end
     end
   end
+
+  describe "#proxy_header_list" do
+    context "when no set proxy headers" do
+      it "returns nil" do
+        expect(easy.proxy_header_list).to eq(nil)
+      end
+    end
+
+    context "when set proxy headers" do
+      it "returns pointer to header list" do
+        easy.proxy_headers = {'X-Proxy-Timeout' => '100'}
+        expect(easy.proxy_header_list).to be_a(FFI::Pointer)
+      end
+    end
+  end
 end

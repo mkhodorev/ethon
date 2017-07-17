@@ -345,6 +345,8 @@ module Ethon
       option :easy, :ignore_content_length, :bool, 136
       option :easy, :http_content_decoding, :bool, 158
       option :easy, :http_transfer_decoding, :bool, 157
+      option :easy, :proxyheader, :curl_slist, 228
+      option :easy, :headeropt, :bitmask, 229, [:unified, :separate]
       ## SMTP OPTIONS
       option :easy, :mail_from, :string, 186
       option :easy, :mail_rcpt, :curl_slist, 187
